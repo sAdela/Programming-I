@@ -22,6 +22,12 @@ int countDigits(int Num) { //To count how many digits number have
 	return counter;
 }
 
+bool InputConditions(int i, int j){
+	if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0))
+		return true;
+	return false;
+}
+
 void Input(int Array[][8]) {
 
 	srand(time(0));
@@ -29,10 +35,10 @@ void Input(int Array[][8]) {
 
 		for (int j = 0; j < 8; j++) {
 
-			if ((i % 2 == 0 && j % 2 == 0) || (i % 2 != 0 && j % 2 != 0)) {
+			if (InputConditions(i,j) == true) {
 
 				do {
-				//	cin >> Array[i][j];		 For easier testing: Array[i][j] = rand() % 2000 + 1;
+				//	cin >> Array[i][j];		 For easier testing: 
 					Array[i][j] = rand() % 2000 + 1;
 				} while (Array[i][j] % 2 != 0 || countDigits(Array[i][j]) % 2 == 0);	//Satisfying input conditions
 
@@ -40,7 +46,7 @@ void Input(int Array[][8]) {
 			else {
 
 				do {
-					//cin >> Array[i][j];		 For easier testing: Array[i][j] = rand() % 2000 + 1;
+					//cin >> Array[i][j];		 For easier testing: 
 					Array[i][j] = rand() % 2000 + 1;
 				} while (Array[i][j] % 2 == 0 || countDigits(Array[i][j]) % 2 != 0);	 //Satisfying input conditions
 
