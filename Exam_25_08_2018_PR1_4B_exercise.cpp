@@ -84,9 +84,8 @@ void main() {
 		cin >> Player;
 	} while (Player < 1 || Player > 11);
 
-	Player--;
 
-	cout << PlayerGoalsForGame(Array, Player) << endl;
+	cout << PlayerGoalsForGame(Array, --Player) << endl;
 
 
 	cout << BestPlayer(Array);
